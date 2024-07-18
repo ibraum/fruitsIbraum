@@ -1,0 +1,452 @@
+@font-face {
+    font-family: arthaus;
+    src: url(asset/fonts/Arthaus-Bold.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root{
+    --yellow: #fbd165;
+    --yellow-dark: #e7b944;
+    --red: #e65c5d;
+    --red-dark: #b84c4c;
+    --green: rgb(109, 174, 109);
+    --green-dark: rgb(97, 152, 97);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+}
+
+header{
+    width: 100%;
+    padding: 2px 50px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+nav ul{
+    width: 300px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li:hover a{
+    text-decoration: underline;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: all.2s .1s ease-in-out;
+}
+
+/* main---------------------------------------------------------------------------------------------- */
+
+main{
+    width: 100%;
+    min-height: calc(100vh - 79px);
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 0 15%;
+}
+
+#hero .div{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#hero .write{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#hero .write h1{
+    font-size: 5rem;
+    padding: 10px 10px 10px 0;
+    border-radius: 50px;
+}
+
+#hero .write p{
+    font-size: 1.1rem;
+    line-height: 30px;
+}
+
+#hero .write button{
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    /* background: linear-gradient(115deg,  yellow, rgb(226, 148, 3)); */
+    background-color: var(--yellow-dark);
+    cursor: pointer;
+    transition: all .2s .1s ease-in-out;
+    border: none;
+    box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+#hero .write button:hover{
+    /* border: 1px solid black; */
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2) inset;
+    /* background: linear-gradient(115deg,  white, white); */
+    background-color: var(--yellow);
+}
+
+.img-div{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-image: url(asset/bg/bg2.jpg);
+    background-position: left;
+    background-size: cover;
+    position: relative;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.fruits{
+    position: absolute;
+    width: 200px;
+    animation: fruit 7s .1s ease-in-out infinite;
+}
+
+.fruit1{
+    animation-delay: 1s;
+}
+
+.fruit2{
+    animation-delay: 2s;
+}
+
+.fruit3{
+    animation-delay: 3s;
+}
+
+@keyframes fruit {
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(40px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.fruit1{
+    top: 0;
+    right: 0;
+    transform: rotate(45deg);
+    transform-origin: bottom;
+}
+
+.fruit3{
+    bottom: 0;
+}
+
+.ananas{
+    background-color: var(--green);
+}
+
+.banane{
+    background-color: var(--yellow);
+}
+
+.pomme{
+    background-color: var(--red);
+}
+
+.fruit-section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.fruit-section .name{
+    position: absolute;
+    left: 0;
+    transform: rotate(-90deg);
+    font-size: 6rem;
+    letter-spacing: 25px;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+}
+
+.fruit-section img{
+    z-index: 1000;
+    position: relative;
+    width: 450px;
+    transition: all .2s .1s ease-out;
+}
+
+.fruit-section img:hover{
+    transform: scale(1.2) rotate(10deg);
+    cursor: pointer;
+}
+
+.ananas::after{
+content: "";
+height: 75px;
+width: 100%;
+top: 0;
+position: absolute;
+background: linear-gradient(180deg, white, rgba(255, 255, 255, 0));
+}
+
+.banane::after{
+    content: "";
+    height: 75px;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    background: linear-gradient(180deg, var(--green), rgba(255, 255, 255, 0));
+    }
+
+    .pomme::after{
+        content: "";
+        height: 75px;
+        width: 100%;
+        top: 0;
+        position: absolute;
+        background: linear-gradient(180deg, var(--yellow), rgba(255, 255, 255, 0));
+        }
+
+.ananas .name{
+    color: var(--green-dark);
+}
+
+.banane .name{
+    color: var(--yellow-dark);
+}
+
+.pomme .name{
+    color: var(--red-dark);
+}
+
+.btn{
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.25);
+    z-index: 100000;
+    transition: all .1s .1s ease-in;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+.btn-green{
+    background-color: var(--green-dark);
+}
+
+.btn-yellow{
+    background-color: var(--yellow-dark);
+}
+
+.btn-red{
+    background-color: var(--red-dark);
+}
+
+.title{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+    margin-top: 75px;
+}
+
+.name-ananas{
+    position: absolute;
+    font-size: 12rem;
+    font-weight: bolder;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 50px;
+    color: var(--green-dark);
+}
+
+.name-banane{
+    position: absolute;
+    font-size: 12rem;
+    font-weight: bolder;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 50px;
+    color: var(--yellow-dark);
+}
+
+.name-pomme{
+    position: absolute;
+    font-size: 12rem;
+    font-weight: bolder;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 50px;
+    color: var(--red-dark);
+}
+
+.content{
+    width: 100%;
+    min-height: 10vh;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+footer{
+    width: 100%;
+    height: 25px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+footer div{
+    color: white;
+}
+
+@media screen and (max-width: 1220px) {
+    header{
+        width: 100%;
+        padding: 2px 50px;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }   
+    
+    nav{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    #hero{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        min-height: 1100px;
+        padding: 0 15%;
+        gap: 50px;
+    }
+
+    #hero .div{
+        width: 100%;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #hero .write h1{
+        font-size: 3.1rem;
+        padding: 10px 10px 10px 0;
+        border-radius: 50px;
+    }
+
+    .img-div{
+        width: 310px;
+        height: 310px;
+        border-radius: 50%;
+        background-image: url(asset/bg/bg2.jpg);
+        background-position: left;
+        background-size: cover;
+        position: relative;
+        box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    .fruits{
+        position: absolute;
+        width: 100px;
+        animation: fruit 7s .1s ease-in-out infinite;
+    }
+
+    #hero .write p{
+        font-size: 1.1rem;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    footer div{
+        color: white;
+        font-size: .8rem;
+    }
+}
+
